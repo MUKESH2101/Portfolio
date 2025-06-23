@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mukesh G E | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<head>
+
+<style>
+    .nav-links a.active {
+      animation: disco-glow 1.5s infinite;
+      background-color: rgba(255, 255, 255, 0.957);
+      border-radius: 5px;
+    }
+
+    @keyframes disco-glow {
+      0%   { box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.7); }
+      20%  { box-shadow: 0 0 10px 3px rgba(0, 255, 0, 0.7); }
+      40%  { box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); }
+      60%  { box-shadow: 0 0 10px 3px rgba(255, 255, 0, 0.7); }
+      80%  { box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.7); }
+      100% { box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.7); }
+    }
+  </style>
+</head>
+<body>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+          });
+          
+          this.classList.add('active');
+          
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+
+      function setActiveLink() {
+        const fromTop = window.scrollY + 100;
+        
+        navLinks.forEach(link => {
+          const section = document.querySelector(link.getAttribute('href'));
+          
+          if (
+            section.offsetTop <= fromTop &&
+            section.offsetTop + section.offsetHeight > fromTop
+          ) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+      
+      setActiveLink();
+      window.addEventListener('scroll', setActiveLink);
+    });
+
+  </script>
+</body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Mukesh<span> G E</span></a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="home" class="home-section">
+    <div class="container">
+      <div class="home-content">
+        <div class="home-text">
+          <h3>Hi, I'm</h3>
+          <h1>Mukesh G E</h1>
+          <h2>I am a Full Stack Developer and UI/UX Designer <span class="typed-text"></span></h2>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> mukeshge006@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +91 9566543907</p>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <a href="Resume two page.pdf" download class="btn">Download CV <i class="fas fa-download"></i></a>
+        </div>
+        <div class="home-image">
+          <img src="mukeshge.jpg" alt="Mukesh G E">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="mukeshge.jpg" alt="Mukesh G E">
+        </div>
+        <div class="about-text">
+          <p>I'm Mukesh , a passionate and curious Computer Science and Design undergraduate at Kongu Engineering College.</p>
+          <p>I'm a passionate and dedicated Full Stack Developer with hands-on experience in both front-end and back-end technologies. I love building complete web applications — from creating intuitive and responsive user interfaces to developing powerful server-side logic and managing databases.</p>
+          <p>I work confidently with technologies like HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I enjoy solving real-world problems through clean, efficient, and scalable code.</p>
+          <p>What drives me is the opportunity to learn something new every day and the satisfaction of turning ideas into impactful digital experiences. I'm a team player who thrives in collaborative environments, and I take pride in writing code that not only works but also makes sense to others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <button class="skill-btn">HTML5</button>
+        <button class="skill-btn">CSS3</button>
+        <button class="skill-btn">JavaScript</button>
+        <button class="skill-btn">Python</button>
+        <button class="skill-btn">C</button>
+        <button class="skill-btn">C++</button>
+        <button class="skill-btn">Java</button>
+        <button class="skill-btn">UI/UX</button>
+        <button class="skill-btn">Figma</button>
+        <button class="skill-btn">Blender</button>
+        <button class="skill-btn">AR</button>
+        <button class="skill-btn">Web Designing</button>
+        <button class="skill-btn">Framer</button>
+        <button class="skill-btn">VR</button>
+        <button class="skill-btn">Game Designing</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="plastic - alternative.jpeg" alt="Alternative to Plastics">
+          </div>
+          <div class="project-content">
+            <h3>Alternative to Plastics</h3>
+            <p>An innovative solution to reduce plastic waste by providing sustainable alternatives for everyday products.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="hospital-management.jpeg" alt="Hospital Booking Management">
+          </div>
+          <div class="project-content">
+            <h3>Hospital Booking Management</h3>
+            <p>A comprehensive system for managing patient appointments, doctor schedules, and hospital resources efficiently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="certificates" class="certificates-section">
+    <div class="container">
+      <h2 class="section-title">My Certificates</h2>
+      <div class="certificate-grid">
+        <div class="certificate-card" onclick="openModal('DAA.png')">
+          <img src="DAA.png" alt="DAA Certificate">
+          <p>DAA Course completion certificate</p>
+          <a href="#" class="btn">View</a>
+        </div>
+        <div class="certificate-card" onclick="openModal('NPTEL.png')">
+          <img src="NPTEL.png" alt="NPTEL Certificate">
+          <p>NPTEL Certificate</p>
+          <a href="#" class="btn">View</a>
+        </div>
+        <div class="certificate-card" onclick="openModal('Oracle.png')">
+          <img src="Oracle.png" alt="Oracle Certificate">
+          <p>Oracle APLEX Cloud Developer Certificate</p>
+          <a href="#" class="btn">View</a>
+        </div>
+        <div class="certificate-card" onclick="openModal('AICTE.png')">
+          <img src="AICTE.png" alt="Assessment">
+          <p>AICTE Student Learning Assessment</p>
+          <a href="#" class="btn">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-envelope"></i> mukeshge006@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +91 9566543907</p>
+          <p><i class="fas fa-map-marker-alt"></i> Erode, Tamil Nadu, India</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Mukesh G E. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
