@@ -197,14 +197,17 @@ section {
 .hamburger {
   display: none;
   cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
 }
 
 .hamburger .line {
   width: 25px;
   height: 3px;
   background: var(--primary-color);
-  margin: 5px;
+  margin: 5px 0;
   transition: var(--transition);
+  display: block;
 }
 
 
@@ -395,15 +398,20 @@ section {
 }
 
 .project-image {
-  height: 200px;
+  height: 250px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: var(--transition);
+  padding: 10px;
 }
 
 .project-card:hover .project-image img {
@@ -418,6 +426,29 @@ section {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: var(--primary-color);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-stack span {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(63, 0, 113, 0.2);
+  transition: var(--transition);
+}
+
+.tech-stack span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 0, 113, 0.3);
 }
 
 .project-content p {

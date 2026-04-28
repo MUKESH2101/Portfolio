@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mukesh G E | Full Stack Developer</title>
+  <title>Mukesh G E | UI/UX Designer and Full Stack Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -13,24 +13,62 @@
 <head>
 
 <style>
-    .nav-links a.active {
-      animation: disco-glow 1.5s infinite;
-      background-color: rgba(255, 255, 255, 0.957);
-      border-radius: 5px;
+    .nav-links a {
+      position: relative;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 8px;
     }
 
-    @keyframes disco-glow {
-      0%   { box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.7); }
-      20%  { box-shadow: 0 0 10px 3px rgba(0, 255, 0, 0.7); }
-      40%  { box-shadow: 0 0 10px 3px rgba(0, 0, 255, 0.7); }
-      60%  { box-shadow: 0 0 10px 3px rgba(255, 255, 0, 0.7); }
-      80%  { box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.7); }
-      100% { box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.7); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #fb2576, #332fd0);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(63, 0, 113, 0.1);
+      color: #3f0071;
+      transform: translateY(-2px);
+    }
+
+    .nav-links a:hover::after {
+      width: 80%;
+    }
+
+    .nav-links a.active {
+      background: linear-gradient(135deg, rgba(63, 0, 113, 0.15), rgba(251, 37, 118, 0.1));
+      color: #3f0071;
+      font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+      width: 80%;
+      background: linear-gradient(135deg, #3f0071, #fb2576);
+      box-shadow: 0 2px 8px rgba(63, 0, 113, 0.3);
     }
   </style>
 </head>
 <body>
   <script>
+
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (navLinks && hamburger) {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        console.log('Mobile menu toggled!');
+      }
+    }
 
     document.addEventListener('DOMContentLoaded', function() {
     
@@ -45,6 +83,14 @@
           });
           
           this.classList.add('active');
+          
+          // Close mobile menu when clicking a link
+          const navLinksContainer = document.querySelector('.nav-links');
+          const hamburger = document.querySelector('.hamburger');
+          if (navLinksContainer && hamburger) {
+            navLinksContainer.classList.remove('active');
+            hamburger.classList.remove('active');
+          }
           
           e.preventDefault();
           document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -89,7 +135,7 @@
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger">
+      <div class="hamburger" onclick="toggleMobileMenu()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -104,7 +150,7 @@
         <div class="home-text">
           <h3>Hi, I'm</h3>
           <h1>Mukesh G E</h1>
-          <h2>I am a Full Stack Developer and UI/UX Designer <span class="typed-text"></span></h2>
+          <h2>I am a UI/UX Designer and Full Stack Developer <span class="typed-text"></span></h2>
           <div class="contact-info">
             <p><i class="fas fa-envelope"></i> mukeshge006@gmail.com</p>
             <p><i class="fas fa-phone"></i> +91 9566543907</p>
@@ -114,10 +160,10 @@
             <a href="https://www.linkedin.com/in/mukesh-g-e-42196a32a/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/_mukzz._17/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
-          <a href="Resume two page.pdf" download class="btn">Download CV <i class="fas fa-download"></i></a>
+          <a href="Mukesh_GE_UIUXResume.pdf" download class="btn">Download CV <i class="fas fa-download"></i></a>
         </div>
         <div class="home-image">
-          <img src="mukeshge.jpg" alt="Mukesh G E">
+          <img src="Mukesh.png" alt="Mukesh G E">
         </div>
       </div>
     </div>
@@ -129,13 +175,13 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <div class="about-image">
-          <img src="mukeshge.jpg" alt="Mukesh G E">
+          <img src="Mukesh.png" alt="Mukesh G E">
         </div>
         <div class="about-text">
-          <p>I'm Mukesh , a passionate and curious Computer Science and Design undergraduate at Kongu Engineering College.</p>
-          <p>I'm a passionate and dedicated Full Stack Developer with hands-on experience in both front-end and back-end technologies. I love building complete web applications — from creating intuitive and responsive user interfaces to developing powerful server-side logic and managing databases.</p>
-          <p>I work confidently with technologies like HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I enjoy solving real-world problems through clean, efficient, and scalable code.</p>
-          <p>What drives me is the opportunity to learn something new every day and the satisfaction of turning ideas into impactful digital experiences. I'm a team player who thrives in collaborative environments, and I take pride in writing code that not only works but also makes sense to others.</p>
+          <p>I'm Mukesh, a passionate and innovative Computer Science and Design undergraduate at Kongu Engineering College, specializing in both UI/UX Design and Full Stack Development.</p>
+          <p>As a versatile Full Stack Developer, I excel at building comprehensive web applications from concept to deployment. I architect robust backend systems using Node.js, Express, and databases like MongoDB and MySQL, while crafting seamless frontend experiences with React, HTML, CSS, and JavaScript.</p>
+          <p>My UI/UX expertise allows me to create user-centered designs that blend aesthetics with functionality. I leverage tools like Figma to prototype intuitive interfaces, conduct user research, and design solutions that prioritize both visual appeal and exceptional user experience.</p>
+          <p>I thrive on transforming complex problems into elegant digital solutions, combining technical excellence with design thinking. Whether developing scalable backend architecture or designing pixel-perfect interfaces, I'm committed to creating products that not only function flawlessly but also delight users.</p>
         </div>
       </div>
     </div>
@@ -146,6 +192,14 @@
     <div class="container">
       <h2 class="section-title">My Skills</h2>
       <div class="skills-grid">
+        <button class="skill-btn">UI/UX</button>
+        <button class="skill-btn">Figma</button>
+        <button class="skill-btn">Web Designing</button>
+        <button class="skill-btn">Framer</button>
+        <button class="skill-btn">Blender</button>
+        <button class="skill-btn">AR</button>
+        <button class="skill-btn">VR</button>
+        <button class="skill-btn">Game Designing</button>
         <button class="skill-btn">HTML5</button>
         <button class="skill-btn">CSS3</button>
         <button class="skill-btn">JavaScript</button>
@@ -153,14 +207,6 @@
         <button class="skill-btn">C</button>
         <button class="skill-btn">C++</button>
         <button class="skill-btn">Java</button>
-        <button class="skill-btn">UI/UX</button>
-        <button class="skill-btn">Figma</button>
-        <button class="skill-btn">Blender</button>
-        <button class="skill-btn">AR</button>
-        <button class="skill-btn">Web Designing</button>
-        <button class="skill-btn">Framer</button>
-        <button class="skill-btn">VR</button>
-        <button class="skill-btn">Game Designing</button>
       </div>
     </div>
   </section>
@@ -172,20 +218,67 @@
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-image">
-            <img src="plastic - alternative.jpeg" alt="Alternative to Plastics">
+            <img src="weather-app.png" alt="Weather App">
           </div>
           <div class="project-content">
-            <h3>Alternative to Plastics</h3>
-            <p>An innovative solution to reduce plastic waste by providing sustainable alternatives for everyday products.</p>
+            <h3>Weather App</h3>
+            <p>Built a responsive Weather App using HTML, CSS, and JavaScript that retrieves real-time weather data via OpenWeather API and is deployed on GitHub Pages.</p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>OpenWeather API</span>
+            </div>
+            <a href="https://github.com/MUKESH2101/Weather-App" target="_blank" class="btn">View Project <i class="fab fa-github"></i></a>
           </div>
         </div>
         <div class="project-card">
           <div class="project-image">
-            <img src="hospital-management.jpeg" alt="Hospital Booking Management">
+            <img src="ar-ml-os.png" alt="AR Integrated for Machine Learning Operating System">
           </div>
           <div class="project-content">
-            <h3>Hospital Booking Management</h3>
-            <p>A comprehensive system for managing patient appointments, doctor schedules, and hospital resources efficiently.</p>
+            <h3>AR Integrated for Machine Learning Operating System</h3>
+            <p>Developed an Augmented Reality (AR) based machine training system that provides real-time visual guidance and safety instructions using AR.js and A-Frame.</p>
+            <div class="tech-stack">
+              <span>JavaScript</span><span>HTML</span><span>CSS</span><span>AR.js</span><span>A-Frame</span>
+            </div>
+            <a href="https://github.com/Mohana-Siva/consultancy-project" target="_blank" class="btn">View Project <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="ai-tamil-learning.jpg" alt="AI Tamil Learning Platform">
+          </div>
+          <div class="project-content">
+            <h3>AI Tamil Learning Platform</h3>
+            <p>Built an AI-based web platform for learning Tamil with a responsive UI and modular frontend structure. Managed source code using Git.</p>
+            <div class="tech-stack">
+              <span>TypeScript</span><span>HTML</span><span>Tailwind CSS</span><span>GitHub</span>
+            </div>
+            <a href="https://github.com/MUKESH2101/AI-Tamil-Learning-Platform" target="_blank" class="btn">View Project <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="cureyo-app.png" alt="Cureyo Medical App">
+          </div>
+          <div class="project-content">
+            <h3>Cureyo – Medical App (UI/UX Project)</h3>
+            <p>Designed a modern healthcare mobile application focused on doctor discovery, appointment booking, and patient interaction. Created user-friendly UI screens including onboarding, doctor listing, booking, payment, and profile management using Figma.</p>
+            <div class="tech-stack">
+              <span>Figma</span><span>UI/UX Design</span><span>Mobile Design</span>
+            </div>
+            <a href="https://www.figma.com/design/BZMDsQlotTLFvL2m9QsZhT/Hackathon-Project?node-id=151-663&t=F2UhkhZ9JgtNKidI-0" target="_blank" class="btn">View Design <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="college-counselling.png" alt="College Connect App">
+          </div>
+          <div class="project-content">
+            <h3>College Connect App (UI/UX Project)</h3>
+            <p>Designed a student-focused event application to help users discover and participate in college events, workshops, and activities. Built intuitive user flows and clean interface layouts to enhance event browsing and registration accessibility.</p>
+            <div class="tech-stack">
+              <span>Figma</span><span>UX Research</span><span>Wireframing</span><span>Prototyping</span>
+            </div>
+            <a href="https://www.figma.com/design/0eyrVTEq0f0qdWZ2DdyN0F/HACATHON-26?node-id=28-402&t=6qfgcKZBB6dpqmZb-0" target="_blank" class="btn">View Design <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
@@ -259,7 +352,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2023 Mukesh G E. All rights reserved.</p>
+      <p>&copy; 2026 Mukesh G E. All rights reserved.</p>
     </div>
   </footer>
 
