@@ -17,10 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
   certCards.forEach(function(card) {
     var btn = card.querySelector('.btn');
     var img = card.querySelector('img');
+    if (img) {
+      card.addEventListener('click', function() {
+        openModal(img.src);
+      });
+    }
     if (btn && img) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
-        openModal(img.getAttribute('src'));
+        e.stopPropagation();
+        openModal(img.src);
       });
     }
   });
